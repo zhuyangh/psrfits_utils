@@ -6,6 +6,8 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 AC_PROG_CC
 AC_PROG_LIBTOOL
+AM_PROG_CC_C_O
+AM_PROG_AR
 
 AX_PTHREAD
 
@@ -14,7 +16,7 @@ AC_CHECK_LIB([cfitsio],[ffgky],[],
 	     [AC_MSG_ERROR([cfitsio is required])])
 
 AC_ARG_ENABLE([sse],
-	      [AS_HELP_STRING([--enable-sse], 
+	      [AS_HELP_STRING([--enable-sse],
 			      [enable SSE folding code])],
 	      [],
 	      [enable_sse=no])
